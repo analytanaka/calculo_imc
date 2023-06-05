@@ -2,6 +2,8 @@ import{useState} from 'react';
 import styles from './App.module.css';
 import poweredImage from './assets/powered.png'
 
+import {levels, calculateImc} from './helpers/imc'
+
 const App=() =>{
    const [altura,setAltura] = useState(0);
    const [peso,setPeso]     = useState(0);
@@ -19,7 +21,7 @@ const App=() =>{
         <header>
            <div className={styles.headerContainer}>
               <img src={poweredImage}  alt=" " width={150}/>
-           </div>
+           </div>    
         </header>
         <div className={styles.container}>
               <div className={styles.leftSide}>
@@ -40,7 +42,12 @@ const App=() =>{
                <button onClick={handleCalc}>Calcular</button>
               </div>
               <div className={styles.rightSide}>
-               oi
+                 <div className={styles.grid}>
+                  {levels.map((item, key)=>(
+                      <div key={key}>{item.title}</div>
+                  ))}
+                 
+                 </div>
               </div>
         </div>
    </div>
