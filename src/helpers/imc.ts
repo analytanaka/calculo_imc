@@ -1,6 +1,6 @@
 export type Level={
- title:String;
- color:String;
+ title:string;
+ color:string;
  icon:'down' | 'up';   
  imc:number[];
  yourImc?:number
